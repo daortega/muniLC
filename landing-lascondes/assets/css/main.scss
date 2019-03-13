@@ -1,0 +1,768 @@
+//fuentes
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@font-face{
+  font-family: 'Gilroy';
+  src: url('../font/Gilroy-ExtraBold.otf');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy Light';
+  src: url('../font/Gilroy-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin anime($animation, $duration){
+  animation: $animation $duration;
+}
+//Colores
+$grisBg: #eef2f6;
+$grisTip: #51515b;
+$footer: #232323;
+$blanco: #fff;
+
+@keyframes aparecerLeft {
+  from {
+    left: 0;
+    opacity: 0;
+  }
+  to {
+    left: 35%;
+    opacity: 100%;
+  }
+}
+
+@keyframes aparecerRight {
+  from {
+    left: 80%;
+    opacity: 0;
+  }
+  to {
+    left: 55%;
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIN {
+  from {
+    opacity: 0;
+    top: -10px;
+  }
+  to {
+    opacity: 100%;
+    top: 0;
+  }
+}
+
+//// variables responsivas:
+$breakpoint-xs: 360px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == sm { //entre 767 a 1023
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == md { //entre 1022 hasta 1360
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){ @content; }
+  }
+  @else if $media == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+}
+
+//inicio estilos
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a{
+  font-family: 'Gilroy', sans-serif;
+  color: $grisTip;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h2{
+  font-size: 30px;
+  @include media(xs){
+    font-size: 1.5em;
+  }
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: $grisBg;
+}
+
+nav{
+  position: absolute;
+  right: 5%;
+  width: 100%;
+  max-width: 1300px;
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10000;
+  @include media(xs){
+    position: fixed;
+    right: 80%;
+    top: 20px;
+  }
+  & img.nav_menu{
+    display: none;
+    @include media(xs){
+      display: block;
+      height: 35px;
+      padding: 10px;
+      border-radius: 50%;
+      background: #0fbbd4;
+    }
+  }
+  & ul{
+    float: right;
+    @include media(xs){
+      display: none;
+      position: absolute;
+      top: 60px;
+      background: #0fbbd4;
+      padding: 1em;
+      border-radius: 10px;
+      right: -100px;
+    }
+    &.visible{
+      @include media(xs){
+        display: block;
+      }
+    }
+    & li{
+      display: inline-block;
+      margin-left: 1em;
+      @include media(xs){
+        display: block;
+        margin: 10px;
+      }
+      &:hover{
+        opacity: .3;
+        transition: opacity .4s;
+      }
+      & a{
+        text-decoration: none;
+        color: #51515b;
+        font-family: 'Gilroy';
+        @include media(xs){
+          font-size: .8em;
+          font-family: 'Gilroy Light';
+          color: $blanco;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+header#inicio{
+  max-width: 1400px;
+  margin: auto;
+  padding: 3em;
+  position: relative;
+//min-height: 400px;
+  @include media(xs){
+    height: auto;
+    padding: 2em 1em 0;
+  }
+  & .header__top{
+    max-width: 1270px;
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    @include media(xs){
+      flex-direction: column;
+    }
+    & img.header-mobile{
+      display: none;
+      @include media(xs){
+        display: block;
+        width: 100%;
+      }
+    }
+    & div.header__logos{
+      margin-top: 40px;
+      flex: 0 1 500px;
+      @include media(xs){
+        flex: 1 1 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+      }
+      & img, a{
+        display: inline-block;
+        @include media(xs){
+          display: inline;
+          width: 30vw;
+        }
+      }
+      & a{
+        font-weight: bold;
+        border-left: 1px solid #ccc;
+        padding-left: 1em;
+        margin-left: 1em;
+        & img{
+          @include media(xs){
+            width: 30vw;
+          }
+        }
+        & h1{
+          @include media(xs){
+            display: inline;
+          }
+        }
+      }
+
+    }
+    & div.header__slider{
+      flex: 0 1 25%;
+      max-width: 300px;
+      margin-top: 40px;
+      margin-right: 20%;
+      color: $blanco;
+      @include media(xs){
+        flex: 0 1 100%;
+        padding: 0 2em;
+        max-width: none;
+        width: 100%;
+        color: $grisTip;
+        box-sizing: border-box;
+        & h4{
+          color: $grisTip;
+        }
+      }
+    }
+  }
+  //img header
+  & div.header__bkgr{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -5;
+
+    & div.header__img{
+      position: relative;
+      text-align: center;
+      z-index: -10;
+      @include media(xs){
+        display: none;
+      };
+      & img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include anime(fadeIN,1.5s);
+        &:first-child{
+          position: static;
+          width: 45%;
+          margin-left: 20%;
+          @include anime(fadeIN,0s);
+        }
+        //bicicleta
+        &:nth-child(4){
+          height: 44%;
+          top: 55%;
+          left: 35%;
+          @include anime(aparecerLeft,2s);
+        }
+        //scooter
+        &:nth-child(5){
+          height: 44%;
+          top: 65%;
+          left: 55%;
+          @include anime(aparecerRight,3s);
+        }
+        &:last-child{
+          @include anime(fadeIN,1.5s);
+        }
+      }
+    }
+  }
+
+}
+
+.apLeft{
+  animation: aparecerLeft 2s ease-out;
+}
+.apRight{
+  animation: aparecerRight 2s ease-out;
+}
+.fadeIN{
+  @include anime(fadeIN, 1s);
+}
+main{
+  max-width: 1270px;
+  margin: auto;
+  z-index: 50;
+  & section{
+    background-color: $blanco;
+    border-radius: 30px;
+    margin-bottom: 2em;
+    position: relative;
+    @include media(xs){
+      border-radius: 15px;
+    }
+    &#parametros{
+      padding: 3em;
+      @include media(xs){
+        padding: 2em;
+        height: 80vh;
+        width: 80%;
+        margin-left: 15%;
+        box-sizing: border-box;
+      }
+      & h2{
+        display: none;
+      }
+      & .parametros__indicadores{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        top: -50px;
+        left: 0;
+        @include media(xs){
+          flex-direction: column;
+          z-index: 100;
+          height: 100%;
+          width: 30%;
+          top: 0;
+          left: -50px;
+        }
+        & a{
+          text-align: center;
+          text-decoration: none;
+          color: $grisTip;
+          flex: 1 1 auto;
+          font-size: 1.1em;
+          @include media(xs){
+            flex: 0 1 auto;
+          }
+          &:hover{
+            & img{
+              padding: 0;
+              transition: padding .5s;
+            }
+          }
+          &.gradient-naranjo{
+            &.active{
+              color: #eda846;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
+            }
+          }
+          &.gradient-amarillo{
+            &.active{
+              color: #ffc62e;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(-45deg, #eda846 0%, #ffc62e 100%);
+            }
+          }
+          &.gradient-rosa{
+            &.active{
+              color: #dd5dae;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(to left, #7B538C 0%, #dd5dae 100%);
+            }
+          }
+          &.gradient-celeste{
+            &.active{
+              color: #00A3D9;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(to bottom, #68e3fe 0%, #00A3D9 100%);
+            }
+          }
+          &.gradient-azul{
+            &.active{
+              color: #365992;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(to right, #365992 0%, #31a6b4 100%)
+            }
+          }
+          &.gradient-morado{
+            &.active{
+              color: #65659b;
+              transition: color .2s ease-out;
+            }
+            & img{
+              @include linear-gradient(to top, #65659b 0%, #8d8dc7 100%);
+            }
+          }
+          & img{
+            height: 80px;
+            width: 80px;
+            padding: .5em;
+            border-radius: 50%;
+            box-sizing: border-box;
+            @include media(xs){
+              height: 60px;
+              width: 60px;
+            }
+          }
+          & p{
+            @include media(xs){
+              display: none;
+            }
+          }
+        }
+      }
+      & .parametros__grafico{
+        width: 100%;
+        display: none;
+        & header{
+          padding: 0;
+          margin: 0;
+          height: 15%;
+        }
+        & img{
+          width: 100%;
+        }
+        &.active{
+          display: block;
+        }
+      }
+      & footer{
+        text-align: right;
+        background-color: transparent;
+        padding: 0;
+        & button{
+          display: inline;
+        }
+      }
+    }
+
+    &#sensores{
+      display: flex;
+      flex-flow: row nowrap;
+      @include media(xs){
+        flex-direction: column;
+        padding: 1em;
+        margin: 1em;
+      }
+      & .sensores__info{
+        flex: 0 1 auto;
+        padding: 5em 2em;
+        display: flex;
+        @include media(xs){
+          padding: 1em 0;
+        }
+        & img{
+          height: 60px;
+          width: 60px;
+          box-sizing: border-box;
+          padding: .5em;
+          border-radius: 50%;
+          margin-right: 1em;
+          @include linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
+          @include media(xs){
+            height: 50px;
+            width: 50px;
+          }
+        }
+        & h2{
+          flex: 0 1 auto;
+        }
+      }
+
+      & .sensores__mapa{
+        flex: 1 1 70%;
+        width: 100%;
+        height: 400px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        @include media(xs){
+          border-radius: 0;
+          height: 60vh;
+        }
+      }
+    }
+    &#comentarios{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 3em 2em;
+      @include media(xs){
+        flex-wrap: wrap;
+        margin: 1em;
+        padding: 2em 1em;
+      }
+      & img{
+        flex: 0 1 auto;
+        height: 60px;
+        width: 60px;
+        box-sizing: border-box;
+        padding: .5em;
+        border-radius: 50%;
+        margin-right: 1em;
+        @include linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
+        @include media(xs){
+          height: 50px;
+          width: 50px;
+        }
+      }
+      & h2{
+        flex: 1 1 auto;
+      }
+      & .comentarios__form{
+        flex: 0 1 70%;
+        @include media(xs){
+          flex: 1 1 100%;
+        }
+      }
+    }
+    & span{
+      font-family: 'Gilroy Light', sans-serif;
+      font-weight: lighter;
+      display: block;
+      font-size: .7em;
+      position: relative;
+    }
+
+  }
+}
+button, input.boton__enviar{
+  color: $blanco;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  padding: 1em 2em;
+  border-radius: 2em;
+  border: none;
+  max-height: 42px;
+  &.grad-celeste{
+    @include linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
+  }
+  &.grad-naranja{
+    @include linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
+  }
+}
+form{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  @include media(xs){
+    flex-direction: column;
+    margin-top: 1em;
+  }
+  & div.form__datos{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 50%;
+    @include media(xs){
+      display: block;
+      flex: 0 1 100%;
+    }
+  }
+  & input[type="text"],textarea{
+    border-radius: 4px;
+    background-color: $grisBg;
+    flex: 1 1 50%;
+    border: none;
+    margin: .5em;
+    padding: 1em;
+    @include media(xs){
+      width: 100%;
+      box-sizing: border-box;
+      margin: .5em 0;
+    }
+    & input[name="comentario"]{
+      flex: 0 1 100%;
+      height: 100%;
+      @include media(xs){
+        display: block;
+        height: 200px;
+      }
+    }
+  }
+  & input[type="submit"]{
+    flex: 0 1 10%;
+    align-self: center;
+    @include media(xs){
+      display: block;
+      width: 100%;
+      margin: 1em 0;
+    }
+  }
+}
+
+.barra-contacto{
+  width: 45px;
+  height: 240px;
+  border-radius: 30px;
+  @include media(xs){
+    position: absolute;
+    right: 20px;
+    top: 200px;
+    z-index: 10000;
+    height: 45px;
+  }
+  @include linear-gradient(to bottom, #eda846 0%, #ce434e 100%);
+  & a.boton_comentarios{
+    display: block;
+    width: 45px;
+    height: 240px;
+    position: relative;
+    z-index: 100;
+    @include media(xs){
+      height: 45px
+    }
+    & .infoA{
+        position: absolute;
+        width: 200px;
+        transform: rotate(-90deg);
+        transform-origin: left;
+        left: 23px;
+        bottom: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'Gilroy-Light', sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        font-style: normal;
+        letter-spacing: 1px;
+        @include media(xs){
+          display: none;
+        }
+        & span{
+          font-family: 'Gilroy', sans-serif;
+          font-weight: 300;
+        }
+    }
+    & img{
+      height: 30px;
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      @include media(xs){
+        position: static;
+        height: 35px;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+
+footer{
+  padding: 3em 2em;
+  background-color: $footer;
+  color: $blanco;
+  position: relative;
+  @include media(xs){
+    margin-top: 2em;
+  }
+  & .container{
+    max-width: 1270px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    @include media(xs){
+      flex-direction: column;
+    }
+  }
+  & .btn-up .up {
+    position: absolute;
+    z-index: 99;
+    top: -10px;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #0fbbd4;
+    background-image: url('../img/iconos/ico-desplegable-abierto.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /*@include media(xs){
+      position: fixed;
+      top: 90%;
+      right: 15px;
+      z-index: 100000;
+    }*/
+}
+  & address{
+    font-family: 'Gilroy Light', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    flex: 1 1 auto;
+    @include media(xs){
+      display: none;
+    }
+  }
+  & div.social{
+    flex: 0 1 30%;
+    display: flex;
+    flex-grow: row nowrap;
+    justify-content: space-between;
+    & a{
+      flex: 0 1 auto;
+      & span{
+        display: none;
+      }
+    }
+  }
+}
+
+
+.oculto{
+  display: none;
+}
+
+//color tooltip
+.leaflet-popup-content-wrapper{
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+}
+.leaflet-popup-content{
+  margin: 10px;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+  background-color: $grisTip;
+  color: $blanco;
+}
+
+.img-ej-mobile{
+  display: none;
+  @include media(xs){
+    display: block;
+  }
+}

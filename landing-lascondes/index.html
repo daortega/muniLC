@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Las Condes | SmartCity</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+
+    <!-- Mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+
+   <link rel="stylesheet" href="assets/css/animate.css">
+   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="assets/css/carousel.css">
+
+
+  </head>
+  <body>
+    <header id="inicio">
+      <nav class="visible">
+        <ul>
+          <li><a href="#parametros">Parámetros</a></li>
+          <li><a href="#sensores">Sensores</a></li>
+          <li><a href="#comentarios">Comentarios</a></li>
+        </ul>
+        <img class="nav_menu" src="assets/img/iconos/menu.svg" alt="menu">
+      </nav>
+      <div class="header__top">
+        <div class="header__logos">
+          <img src="assets/img/logos/logoLC.png" alt="Logo Municipalidad de Las Condes">
+          <a href="#"><h1><img src="assets/img/logos/lc-smartcity.png" alt="Logo Las Condes SmartCity"></h1></a>
+        </div>
+        <img class="header-mobile" src="assets/img/img-header/header-mobile.png" alt="imagen smartcity">
+        <div class="header__slider">
+          <div class="owl-carousel owl-theme">
+              <div class="item">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+              <div class="item">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+              <div class="item">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+              </div>
+              <div class="item">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+              <div class="item">
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              </div>
+          </div>
+        </div>
+        <div class="barra-contacto">
+          <a class="boton_comentarios" href="#comentarios">
+            <img src="assets/img/iconos/icon-contacto.svg" alt="contacto">
+            <div class="infoA">
+              Envía tus <span>comentarios</span>
+            </div>
+          </a>
+        </div>
+      </div>
+        <div class="header__bkgr">
+          <div class="header__img">
+            <img src="assets/img/img-header/fondo.svg" alt="Fondo ciudad">
+            <img src="assets/img/img-header/ciudad.svg" alt="Ciudad">
+            <img src="assets/img/img-header/calle.svg" alt="Calle ciudad">
+            <img src="assets/img/img-header/bici.svg" alt="Persona andando en bicicleta">
+            <img src="assets/img/img-header/scooter.svg" alt="Persona andando en scooter">
+            <img src="assets/img/img-header/frente.svg" alt="Personas caminando">
+          </div>
+        </div>
+
+
+    </header>
+
+    <main>
+      <section id="parametros">
+        <h2>Parámetros</h2>
+        <div class="parametros__indicadores oculto">
+          <a class="active gradient-amarillo" href="#">
+            <img  src="assets/img/iconos/icon-luminaria.svg" alt="luminarias">
+            <p>Luminarias </p>
+          </a>
+          <a class="gradient-rosa" href="#">
+            <img  src="assets/img/iconos/icon-estacionamiento.svg" alt="estacionamientos">
+            <p>Estacionamientos </p>
+          </a>
+          <a class="gradient-celeste" href="#">
+            <img  src="assets/img/iconos/icon-lluvias.svg" alt="lluvias">
+            <p>Lluvias </p>
+          </a>
+          <a class="gradient-naranjo" href="#">
+            <img  src="assets/img/iconos/icon-temperatura.svg" alt="temperatura">
+            <p>Temperatura </p>
+          </a>
+          <a class="gradient-azul" href="#">
+            <img  src="assets/img/iconos/icon-ruido.svg" alt="ruido">
+            <p>Ruido </p>
+          </a>
+          <a class="gradient-morado" href="#">
+            <img  src="assets/img/iconos/icon-trafico.svg" alt="trafico">
+            <p>Tráfico </p>
+          </a>
+        </div>
+        <article class="parametros__grafico active luminarias">
+          <header>
+            <p>Luminarias</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <article class="parametros__grafico ruido">
+          <header>
+          <p>Ruido</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <article class="parametros__grafico estacionamientos">
+          <header>
+          <p>Estacionamientos</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <article class="parametros__grafico lluvias">
+          <header>
+          <p>Lluvias</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <article class="parametros__grafico temperatura">
+          <header>
+          <p>Temperatura</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <article class="parametros__grafico trafico">
+          <header>
+          <p>Tráfico</p>
+          </header>
+          <img src="assets/img/grafico.png" alt="ejemplo grafico">
+          <img class="img-ej-mobile" src="assets/img/ej-mobile.png" alt="ejemplo grafico">
+
+        </article>
+        <footer>
+          <button class="grad-celeste" type="button" name="button">Download</button>
+        </footer>
+      </section>
+      <section id="sensores">
+        <div class="sensores__info">
+          <img src="assets/img/iconos/icon-sensor.svg" alt="Sensores">
+          <h2><span>Ubicación</span> Sensores</h2>
+        </div>
+        <div id="mapita" class="sensores__mapa"></div>
+      </section>
+      <section id="comentarios">
+        <img src="assets/img/iconos/icon-contacto.svg" alt="Contacto">
+        <h2><span>Envíanos tus</span> Comentarios</h2>
+        <div class="comentarios__form">
+          <form>
+            <div class="form__datos">
+              <input type="text" name="nombre" value="Ingresa tu nombre...">
+              <input type="text" name="lastname" value="Ingresa tu mail...">
+            </div>
+            <textarea rows="4" cols="50" name="comentario">Ingresa tu comentario...
+            </textarea>
+            <!--
+            <input type="text" name="comentario" value="Ingresa tu comentario...">
+            -->
+            <input class="boton__enviar grad-naranja" type="submit" value="Enviar">
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#inicio" class="btn-up">
+        <div class="up"></div>
+      </a>
+      <div class="container">
+      <address><b>Alcalde Joaquín Lavín Infante</b> / Av. Apoquindo 3400, Las Condes - Santiago de Chile, Teléfono (56-2) 2950 70 00</address>
+      <div class="links social">
+        <a class="tooltips-top facebook" href="http://www.facebook.com/munilascondes" target="_blank" title="Facebook - Municipalidad">
+          <img src="assets/img/iconos/facebook.png" alt="Facebook">
+          <span>Municipalidad</span>
+        </a>
+        <a class="tooltips-top facebook" href="https://www.facebook.com/joaquinlavinlascondes/" target="_blank">
+          <img src="assets/img/iconos/facebook.png" alt="Facebook">
+          <span>Alcalde Joaquín Lavín</span>
+        </a>
+        <a class="tooltips-top twitter" href="https://twitter.com/muni_lascondes" target="_blank">
+          <img src="assets/img/iconos/twitter.png" alt="Twitter">
+          <span>Twitter - Municipalidad</span>
+        </a>
+        <a class="tooltips-top flickr" href="https://www.flickr.com/photos/128221459@N06/sets/" target="_blank">
+          <img src="assets/img/iconos/flickr.png" alt="flickr">
+          <span>Flickr - Municipalidad</span>
+        </a>
+        <a class="tooltips-top instagram" href="https://www.instagram.com/muni_lascondes/" target="_blank">
+          <img src="assets/img/iconos/instagram.png" alt="instagram">
+          <span>Instagram - Municipalidad</span>
+        </a>
+        <a class="tooltips-top youtube" href="https://www.youtube.com/user/LasCondestvonline" target="_blank">
+          <img src="assets/img/iconos/youtube.png" alt="youtube">
+          <span>Youtube - Municipalidad</span>
+        </a>
+      </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js" charset="utf-8"></script>
+      <script>
+        //OwlCarousel2
+        //carousel
+          $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            autoplay:true,
+            autoplayTimeout:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        })
+      </script>
+    <script src="assets/js/mapa.js"></script>
+    <script src="assets/js/script.js"></script>
+
+  </body>
+</html>
