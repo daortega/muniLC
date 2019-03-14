@@ -395,7 +395,6 @@ header#inicio div.header__bkgr div.header__img img:last-child {
   border-radius: 30px;
   margin-left: auto;
   background: #eda846;
-  background: -webkit-linear-gradient(legacy-direction(to bottom), #eda846 0%, #ce434e 100%);
   background: linear-gradient(to bottom, #eda846 0%, #ce434e 100%);
 }
 @media (max-width: 767px) {
@@ -652,12 +651,10 @@ button, input.boton__enviar {
 }
 button.grad-celeste, input.boton__enviar.grad-celeste {
   background: #68e3fe;
-  background: -webkit-linear-gradient(legacy-direction(to left), #68e3fe 0%, #00A3D9 100%);
   background: linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
 }
 button.grad-naranja, input.boton__enviar.grad-naranja {
   background: #eda846;
-  background: -webkit-linear-gradient(legacy-direction(-45deg), #eda846 0%, #ce434e 100%);
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 
@@ -848,7 +845,6 @@ main section#parametros .parametros__indicadores a.gradient-naranjo.active {
 }
 main section#parametros .parametros__indicadores a.gradient-naranjo img {
   background: #eda846;
-  background: -webkit-linear-gradient(legacy-direction(-45deg), #eda846 0%, #ce434e 100%);
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-amarillo.active {
@@ -857,7 +853,6 @@ main section#parametros .parametros__indicadores a.gradient-amarillo.active {
 }
 main section#parametros .parametros__indicadores a.gradient-amarillo img {
   background: #eda846;
-  background: -webkit-linear-gradient(legacy-direction(-45deg), #eda846 0%, #ffc62e 100%);
   background: linear-gradient(-45deg, #eda846 0%, #ffc62e 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-rosa.active {
@@ -866,7 +861,6 @@ main section#parametros .parametros__indicadores a.gradient-rosa.active {
 }
 main section#parametros .parametros__indicadores a.gradient-rosa img {
   background: #7B538C;
-  background: -webkit-linear-gradient(legacy-direction(to left), #7B538C 0%, #dd5dae 100%);
   background: linear-gradient(to left, #7B538C 0%, #dd5dae 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-celeste.active {
@@ -875,7 +869,6 @@ main section#parametros .parametros__indicadores a.gradient-celeste.active {
 }
 main section#parametros .parametros__indicadores a.gradient-celeste img {
   background: #68e3fe;
-  background: -webkit-linear-gradient(legacy-direction(to bottom), #68e3fe 0%, #00A3D9 100%);
   background: linear-gradient(to bottom, #68e3fe 0%, #00A3D9 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-azul.active {
@@ -884,7 +877,6 @@ main section#parametros .parametros__indicadores a.gradient-azul.active {
 }
 main section#parametros .parametros__indicadores a.gradient-azul img {
   background: #365992;
-  background: -webkit-linear-gradient(legacy-direction(to right), #365992 0%, #31a6b4 100%);
   background: linear-gradient(to right, #365992 0%, #31a6b4 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-morado.active {
@@ -893,7 +885,6 @@ main section#parametros .parametros__indicadores a.gradient-morado.active {
 }
 main section#parametros .parametros__indicadores a.gradient-morado img {
   background: #65659b;
-  background: -webkit-linear-gradient(legacy-direction(to top), #65659b 0%, #8d8dc7 100%);
   background: linear-gradient(to top, #65659b 0%, #8d8dc7 100%);
 }
 main section#parametros .parametros__indicadores a img {
@@ -1010,7 +1001,6 @@ main section#sensores .sensores__info img {
   border-radius: 50%;
   margin-right: 1em;
   background: #68e3fe;
-  background: -webkit-linear-gradient(legacy-direction(to left), #68e3fe 0%, #00A3D9 100%);
   background: linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
 }
 @media (max-width: 767px) {
@@ -1071,7 +1061,6 @@ main section#comentarios img {
   border-radius: 50%;
   margin-right: 1em;
   background: #eda846;
-  background: -webkit-linear-gradient(legacy-direction(-45deg), #eda846 0%, #ce434e 100%);
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 @media (max-width: 767px) {
