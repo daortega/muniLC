@@ -16,7 +16,7 @@
     left: 0;
     opacity: 0;
   }
-  50% {
+  30% {
     left: 10%;
     opacity: 0;
   }
@@ -777,7 +777,7 @@ main section:focus {
   }
 }
 main section#parametros {
-  padding: 3em;
+  padding: 4em 3em;
 }
 @media (max-width: 767px) {
   main section#parametros article {
