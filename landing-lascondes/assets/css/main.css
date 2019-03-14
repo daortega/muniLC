@@ -779,6 +779,9 @@ main section:focus {
 main section#parametros {
   padding: 4em 3em;
 }
+main section#parametros article h3 {
+  display: none;
+}
 @media (max-width: 767px) {
   main section#parametros article {
     min-height: 90%;
