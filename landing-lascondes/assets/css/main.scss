@@ -183,9 +183,11 @@ main{
         }
         & button{
           display: inline;
-
           max-height: none;
           @include media(xs){
+            padding: 1.5em 10%;
+          }
+          @include media(sm){
             padding: 1.5em 10%;
           }
         }

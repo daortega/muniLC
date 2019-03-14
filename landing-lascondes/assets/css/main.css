@@ -16,6 +16,10 @@
     left: 0;
     opacity: 0;
   }
+  50% {
+    left: 10%;
+    opacity: 0;
+  }
   to {
     left: 35%;
     opacity: 100%;
@@ -23,6 +27,10 @@
 }
 @keyframes aparecerRight {
   from {
+    left: 90%;
+    opacity: 0;
+  }
+  50% {
     left: 80%;
     opacity: 0;
   }
@@ -334,16 +342,16 @@ header#inicio div.header__bkgr div.header__img img:nth-child(4) {
   height: 44%;
   top: 55%;
   left: 35%;
-  animation: aparecerLeft 2s;
+  animation: aparecerLeft 4s;
 }
 header#inicio div.header__bkgr div.header__img img:nth-child(5) {
   height: 44%;
   top: 65%;
   left: 55%;
-  animation: aparecerRight 3s;
+  animation: aparecerRight 7s;
 }
 header#inicio div.header__bkgr div.header__img img:last-child {
-  animation: fadeIN 1.5s;
+  animation: fadeIN 2s;
 }
 
 .img-ej-mobile {

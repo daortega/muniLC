@@ -140,17 +140,17 @@ header#inicio{
           height: 44%;
           top: 55%;
           left: 35%;
-          @include anime(aparecerLeft,2s);
+          @include anime(aparecerLeft,4s);
         }
         //scooter
         &:nth-child(5){
           height: 44%;
           top: 65%;
           left: 55%;
-          @include anime(aparecerRight,3s);
+          @include anime(aparecerRight,7s);
         }
         &:last-child{
-          @include anime(fadeIN,1.5s);
+          @include anime(fadeIN,2s);
         }
       }
     }

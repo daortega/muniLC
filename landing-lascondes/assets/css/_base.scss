@@ -40,6 +40,10 @@ $blanco: #fff;
     left: 0;
     opacity: 0;
   }
+  50% {
+    left: 10%;
+    opacity: 0;
+  }
   to {
     left: 35%;
     opacity: 100%;
@@ -48,6 +52,10 @@ $blanco: #fff;
 
 @keyframes aparecerRight {
   from {
+    left: 90%;
+    opacity: 0;
+  }
+  50% {
     left: 80%;
     opacity: 0;
   }
