@@ -394,7 +394,6 @@ header#inicio div.header__bkgr div.header__img img:last-child {
   z-index: 100;
   border-radius: 30px;
   margin-left: auto;
-  background: #eda846;
   background: linear-gradient(to bottom, #eda846 0%, #ce434e 100%);
 }
 @media (max-width: 767px) {
@@ -453,13 +452,12 @@ header#inicio div.header__bkgr div.header__img img:last-child {
   position: relative;
   z-index: 100;
   width: 100%;
-  -webkit-backface-visibility: hidden;
 }
 .owl-carousel .item h4 {
   color: #fff;
 }
 .owl-carousel .item p {
-  font-family: "Gilroy-Light";
+  font-family: "Gilroy Light", sans-serif;
 }
 
 /* end fix */
@@ -561,84 +559,6 @@ header#inicio div.header__bkgr div.header__img img:last-child {
   background-image: url("../img/iconos/dot-active.png");
 }
 
-footer {
-  padding: 3em 2em;
-  background-color: #232323;
-  color: #fff;
-  position: relative;
-}
-@media (max-width: 767px) {
-  footer {
-    margin-top: 2em;
-  }
-}
-footer .container {
-  max-width: 1270px;
-  margin: auto;
-  display: flex;
-  flex-flow: row nowrap;
-}
-@media (max-width: 767px) {
-  footer .container {
-    flex-direction: column;
-  }
-}
-@media (min-width: 767px) and (max-width: 1023px) {
-  footer .container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-footer .btn-up .up {
-  position: absolute;
-  z-index: 99;
-  top: -10px;
-  right: 10%;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #0fbbd4;
-  background-image: url("../img/iconos/ico-desplegable-abierto.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  /*@include media(xs){
-    position: fixed;
-    top: 90%;
-    right: 15px;
-    z-index: 100000;
-  }*/
-}
-footer address {
-  font-family: "Gilroy Light", sans-serif;
-  font-style: normal;
-  font-size: 13px;
-  flex: 1 1 auto;
-}
-@media (max-width: 767px) {
-  footer address {
-    display: none;
-  }
-}
-footer div.social {
-  flex: 0 1 30%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-@media (min-width: 767px) and (max-width: 1023px) {
-  footer div.social {
-    width: 50%;
-    margin: 1em;
-  }
-}
-footer div.social a {
-  flex: 0 1 auto;
-}
-footer div.social a span {
-  display: none;
-}
-
 button, input.boton__enviar {
   color: #fff;
   text-transform: uppercase;
@@ -650,11 +570,9 @@ button, input.boton__enviar {
   max-height: 42px;
 }
 button.grad-celeste, input.boton__enviar.grad-celeste {
-  background: #68e3fe;
   background: linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
 }
 button.grad-naranja, input.boton__enviar.grad-naranja {
-  background: #eda846;
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 
@@ -754,6 +672,84 @@ form input[type=submit] {
   color: #fff;
 }
 
+footer {
+  padding: 3em 2em;
+  background-color: #232323;
+  color: #fff;
+  position: relative;
+}
+@media (max-width: 767px) {
+  footer {
+    margin-top: 2em;
+  }
+}
+footer .container {
+  max-width: 1270px;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+@media (max-width: 767px) {
+  footer .container {
+    flex-direction: column;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .btn-up .up {
+  position: absolute;
+  z-index: 99;
+  top: -10px;
+  right: 10%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #0fbbd4;
+  background-image: url("../img/iconos/ico-desplegable-abierto.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  /*@include media(xs){
+    position: fixed;
+    top: 90%;
+    right: 15px;
+    z-index: 100000;
+  }*/
+}
+footer address {
+  font-family: "Gilroy Light", sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  flex: 1 1 auto;
+}
+@media (max-width: 767px) {
+  footer address {
+    display: none;
+  }
+}
+footer div.social {
+  flex: 0 1 30%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  footer div.social {
+    width: 50%;
+    margin: 1em;
+  }
+}
+footer div.social a {
+  flex: 0 1 auto;
+}
+footer div.social a span {
+  display: none;
+}
+
 main {
   max-width: 1270px;
   margin: auto;
@@ -844,7 +840,6 @@ main section#parametros .parametros__indicadores a.gradient-naranjo.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-naranjo img {
-  background: #eda846;
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-amarillo.active {
@@ -852,7 +847,6 @@ main section#parametros .parametros__indicadores a.gradient-amarillo.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-amarillo img {
-  background: #eda846;
   background: linear-gradient(-45deg, #eda846 0%, #ffc62e 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-rosa.active {
@@ -860,7 +854,6 @@ main section#parametros .parametros__indicadores a.gradient-rosa.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-rosa img {
-  background: #7B538C;
   background: linear-gradient(to left, #7B538C 0%, #dd5dae 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-celeste.active {
@@ -868,7 +861,6 @@ main section#parametros .parametros__indicadores a.gradient-celeste.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-celeste img {
-  background: #68e3fe;
   background: linear-gradient(to bottom, #68e3fe 0%, #00A3D9 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-azul.active {
@@ -876,7 +868,6 @@ main section#parametros .parametros__indicadores a.gradient-azul.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-azul img {
-  background: #365992;
   background: linear-gradient(to right, #365992 0%, #31a6b4 100%);
 }
 main section#parametros .parametros__indicadores a.gradient-morado.active {
@@ -884,7 +875,6 @@ main section#parametros .parametros__indicadores a.gradient-morado.active {
   transition: color 0.2s ease-out;
 }
 main section#parametros .parametros__indicadores a.gradient-morado img {
-  background: #65659b;
   background: linear-gradient(to top, #65659b 0%, #8d8dc7 100%);
 }
 main section#parametros .parametros__indicadores a img {
@@ -1000,7 +990,6 @@ main section#sensores .sensores__info img {
   padding: 0.5em;
   border-radius: 50%;
   margin-right: 1em;
-  background: #68e3fe;
   background: linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
 }
 @media (max-width: 767px) {
@@ -1060,7 +1049,6 @@ main section#comentarios img {
   padding: 0.5em;
   border-radius: 50%;
   margin-right: 1em;
-  background: #eda846;
   background: linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
 }
 @media (max-width: 767px) {
