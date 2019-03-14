@@ -33,7 +33,7 @@ $(function(){
     //ajustar altura de header
     var anchoHeader = $('#inicio').width();
     console.log(anchoHeader);
-    if (anchoHeader > 576){
+    if (anchoHeader > 992){
       $('#inicio').height(anchoHeader/2.4)
     }
 

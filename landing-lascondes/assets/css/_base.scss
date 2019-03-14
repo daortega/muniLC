@@ -1,0 +1,132 @@
+//fuentes
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@font-face{
+  font-family: 'Gilroy';
+  src: url('../font/Gilroy-ExtraBold.otf');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy Light';
+  src: url('../font/Gilroy-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin anime($animation, $duration){
+  animation: $animation $duration;
+}
+//Colores
+$grisBg: #eef2f6;
+$grisTip: #51515b;
+$footer: #232323;
+$blanco: #fff;
+
+@keyframes aparecerLeft {
+  from {
+    left: 0;
+    opacity: 0;
+  }
+  to {
+    left: 35%;
+    opacity: 100%;
+  }
+}
+
+@keyframes aparecerRight {
+  from {
+    left: 80%;
+    opacity: 0;
+  }
+  to {
+    left: 55%;
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIN {
+  from {
+    opacity: 0;
+    top: -10px;
+  }
+  to {
+    opacity: 100%;
+    top: 0;
+  }
+}
+
+//// variables responsivas:
+$breakpoint-xs: 360px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1360px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == sm { //entre 767 a 1023
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == md { //entre 1022 hasta 1360
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg){ @content; }
+  }
+  @else if $media == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+}
+
+
+//inicio estilos
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, a{
+  font-family: 'Gilroy', sans-serif;
+  color: $grisTip;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h2{
+  font-size: 30px;
+  @include media(xs){
+    font-size: 1.5em;
+  }
+  @include media(sm){
+    font-size: 1.7em;
+  }
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: $grisBg;
+}
+
+
+//animaciones
+
+.apLeft{
+  animation: aparecerLeft 2s ease-out;
+}
+.apRight{
+  animation: aparecerRight 2s ease-out;
+}
+.fadeIN{
+  @include anime(fadeIN, 1s);
+}
