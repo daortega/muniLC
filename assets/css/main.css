@@ -45,7 +45,7 @@
     top: -10px;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
     top: 0;
   }
 }
@@ -57,18 +57,23 @@
 @keyframes apyDesap{
   from{
      opacity: 0;
-     left: 75%;
+     left: 90%;
+  }
+  10%{
+   opacity: 0; 
   }
   25%{
      opacity: 1;
   }
-
-  60%{
-    opacity: 0;
-    left: 10%;
+  40%{
+     opacity: 1;
   }
-   to{
+  45%{
     opacity: 0;
+    
+  }
+   60%{
+    left: 5%;
   }
 }
 /*bus animación*/
@@ -77,20 +82,20 @@
      opacity: 0;
      left: 5%;
   }
-  40%{
+  20%{
      opacity: 1;
      left: 28%;
   }
-  /*40%{
-     opacity: 1;
-     left: 30%;*/
-  85%{
+  60%{
+     opacity: 0;
+     
+   }
+   70%{
+     left: 60%;
+   }
+  /*to{
     opacity: 0;
-  }
-  to{
-    opacity: 0;
-    left: 50%;
-  }
+  }*/
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -375,18 +380,22 @@ header#inicio div.header__bkgr div.header__img img {
 header#inicio div.header__bkgr div.header__img img:first-child {
   position: static;
   width: 45%;
-  margin-left: 10%;
-  animation: fadeIN .4s;
+  margin-left: 15%;
+  opacity: 0;
+  animation: fadeIN 2s;
+  animation-delay: .3s;
+  animation-fill-mode: forwards;
 }
 /*bus*/
-header#inicio div.header__bkgr div.header__img img:nth-child(2) {
-  height: 30%;
+header#inicio div.header__bkgr div.header__img img:nth-child(3) {
+  height: 28%;
   width: auto;
-  top: 52%;
+  top: 54%;
   left: 60%;
   opacity: 0;
-  animation: apyDesLeft 6s;
-  animation-delay: 1s;
+  animation: apyDesLeft 12s;
+  animation-delay: 6s;
+  animation-iteration-count: infinite;
   /*animation-timing-function: ease-in;*/
 }
 /*bici*/
@@ -416,7 +425,7 @@ header#inicio div.header__bkgr div.header__img img:last-child {
   width: auto;
   animation: apyDesap 15s;
   animation-iteration-count: infinite;
-  animation-delay: 5s;
+  animation-delay: 8s;
   animation-fill-mode: forwards;
 }
 
