@@ -1,0 +1,235 @@
+header#inicio{
+  max-width: 1400px;
+  margin: auto;
+  padding: 3em;
+  position: relative;
+//min-height: 400px;
+  @include media(xs){
+    height: auto;
+    padding: 2em 1em 0;
+  }
+  & .header__top{
+    max-width: 1270px;
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    @include media(xs){
+      flex-direction: column;
+    }
+    @include media(sm){
+      flex-direction: column;
+    }
+    & img.header-mobile{
+      display: none;
+      @include media(xs){
+        display: block;
+        width: 100%;
+      }
+      @include media(sm){
+        display: block;
+        width: 100%;
+      }
+    }
+    & div.header__logos{
+      margin-top: 40px;
+      flex: 1 1 40%;
+      @include media(xs){
+        flex: 1 1 100%;
+        display: flex;
+        margin: auto;
+        align-items: center;
+      }
+      @include media(sm){
+        display: inline-flex;
+        position: absolute;
+        top: 50px;
+        width: 70%;
+        margin-left: 10%;
+        justify-content: center;
+        align-items: center;
+      }
+      & img, a{
+        display: inline-block;
+        @include media(xs){
+          display: inline;
+          width: 30vw;
+        }
+        @include media(sm){
+          display: flex;
+        }
+      }
+      & a{
+        font-weight: bold;
+        border-left: 1px solid #ccc;
+        padding-left: 1em;
+        margin-left: 1em;
+        & img{
+          @include media(xs){
+            width: 30vw;
+          }
+        }
+        & h1{
+          @include media(xs){
+            display: inline;
+          }
+        }
+      }
+    }
+    & div.header__slider{
+      flex: 1 1 30%;
+      max-width: 280px;
+      margin-top: 40px;
+      color: $blanco;
+      @include media(xs){
+        flex: 0 1 100%;
+        padding: 0 2em;
+        max-width: none;
+        width: 100%;
+        color: $grisTip;
+        box-sizing: border-box;
+        & h4{
+          color: $grisTip;
+        }
+      };
+      @include media(sm){
+        flex: 0 1 100%;
+        padding: 0 2em;
+        max-width: none;
+        width: 100%;
+        color: $grisTip;
+        box-sizing: border-box;
+        & h4{
+          color: $grisTip;
+        }
+      };
+    }
+  }
+  //img header
+  & div.header__bkgr{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -5;
+
+    & div.header__img{
+      position: relative;
+      text-align: center;
+      z-index: -10;
+      @include media(xs){
+        display: none;
+      };
+      @include media(sm){
+        display: none;
+      };
+      & img{
+        position: absolute;
+        top: 0;
+        left: 7%;
+        @include anime(fadeIN,1.5s);
+        &:first-child{
+          position: static;
+          width: 45%;
+          margin-left: 20%;
+          @include anime(fadeIN,0s);
+        }
+        //bicicleta
+        &:nth-child(4){
+          height: 44%;
+          top: 55%;
+          left: 35%;
+          @include anime(aparecerLeft,4s);
+        }
+        //scooter
+        &:nth-child(5){
+          height: 44%;
+          top: 65%;
+          left: 55%;
+          @include anime(aparecerRight,7s);
+        }
+        &:last-child{
+          @include anime(fadeIN,2s);
+        }
+      }
+    }
+  }
+
+}
+
+
+.img-ej-mobile{
+  display: none;
+  @include media(xs){
+    display: block;
+  }
+}
+
+//envía tus comentarios
+.barra-contacto{
+  flex: 1 1 25%;
+  width: 45px;
+  height: 240px;
+  @include media(xs){
+    position: absolute;
+    right: 20px;
+    top: 200px;
+    z-index: 10000;
+    height: 60px;
+    width: 60px;
+  }
+  @include media(sm){
+    position: absolute;
+    right: 20px;
+    top: 200px;
+    z-index: 10000;
+  }
+  & a.boton_comentarios{
+    display: block;
+    width: 45px;
+    height: 240px;
+    position: relative;
+    z-index: 100;
+    border-radius: 30px;
+    margin-left: auto;
+    @include linear-gradient(to bottom, #eda846 0%, #ce434e 100%);
+    @include media(xs){
+      height: 60px;
+      width: 60px;
+    }
+    & .infoA{
+        position: absolute;
+        width: 200px;
+        transform: rotate(-90deg);
+        transform-origin: left;
+        left: 23px;
+        bottom: 20px;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'Gilroy-Light', sans-serif;
+        font-weight: 300;
+        font-size: 12px;
+        font-style: normal;
+        letter-spacing: 1px;
+        @include media(xs){
+          display: none;
+        }
+        & span{
+          font-family: 'Gilroy', sans-serif;
+          font-weight: 300;
+        }
+    }
+    & img{
+      height: 30px;
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      @include media(xs){
+        position: static;
+        height: 50px;
+        padding: 5px;
+      }
+    }
+  }
+}

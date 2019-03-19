@@ -1,0 +1,96 @@
+
+button, input.boton__enviar{
+  color: $blanco;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  padding: 1em 2em;
+  border-radius: 2em;
+  border: none;
+  max-height: 42px;
+  &.grad-celeste{
+    @include linear-gradient(to left, #68e3fe 0%, #00A3D9 100%);
+  }
+  &.grad-naranja{
+    @include linear-gradient(-45deg, #eda846 0%, #ce434e 100%);
+  }
+}
+form{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  @include media(xs){
+    flex-direction: column;
+    margin-top: 1em;
+  }
+  @include media(sm){
+    flex-direction: column;
+  }
+  & div.form__datos{
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 50%;
+    @include media(xs){
+      display: block;
+      flex: 0 1 100%;
+    }
+    @include media(sm){
+      flex-direction: row;
+    }
+  }
+  & input[type="text"],textarea{
+    border-radius: 4px;
+    background-color: $grisBg;
+    flex: 1 1 50%;
+    border: none;
+    margin: .5em;
+    padding: 1em;
+    @include media(xs){
+      width: 100%;
+      box-sizing: border-box;
+      margin: .5em 0;
+    }
+    & input[name="comentario"]{
+      flex: 0 1 100%;
+      height: 100%;
+      @include media(xs){
+        display: block;
+        height: 200px;
+      }
+    }
+  }
+  & input[type="submit"]{
+    flex: 0 1 10%;
+    align-self: center;
+    @include media(xs){
+      display: block;
+      width: 100%;
+      margin: 1em 0;
+      padding: 1.5em;
+      max-height: none;
+    }
+    @include media(sm){
+      margin-top: 2em;
+      padding: 1.5em 10%;
+      max-height: none;
+    }
+  }
+}
+
+.oculto{
+  display: none;
+}
+
+
+//color tooltip
+.leaflet-popup-content-wrapper{
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+}
+.leaflet-popup-content{
+  margin: 10px;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+  background-color: $grisTip;
+  color: $blanco;
+}

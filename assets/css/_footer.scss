@@ -1,0 +1,67 @@
+footer{
+  padding: 3em 2em;
+  background-color: $footer;
+  color: $blanco;
+  position: relative;
+  @include media(xs){
+    margin-top: 2em;
+  }
+  & .container{
+    max-width: 1270px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    @include media(xs){
+      flex-direction: column;
+    }
+    @include media(sm){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  & .btn-up .up {
+    position: absolute;
+    z-index: 99;
+    top: -10px;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #0fbbd4;
+    background-image: url('../img/iconos/ico-desplegable-abierto.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /*@include media(xs){
+      position: fixed;
+      top: 90%;
+      right: 15px;
+      z-index: 100000;
+    }*/
+}
+  & address{
+    font-family: 'Gilroy Light', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    flex: 1 1 auto;
+    @include media(xs){
+      display: none;
+    }
+  }
+  & div.social{
+    flex: 0 1 30%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    @include media(sm){
+      width: 50%;
+      margin: 1em;
+    }
+    & a{
+      flex: 0 1 auto;
+      & span{
+        display: none;
+      }
+    }
+  }
+}
