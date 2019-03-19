@@ -35,7 +35,7 @@
     opacity: 0;
   }
   to {
-    left: 45%;
+    left: 55%;
     opacity: 1;
   }
 }
@@ -83,15 +83,7 @@
   }
   /*40%{
      opacity: 1;
-     left: 30%;
-  }
-  60%{
-     opacity: .8;
-     left: 40%;
-  }
-  80%{
-     opacity: 1;
-  }*/
+     left: 30%;*/
   85%{
     opacity: 0;
   }
@@ -390,7 +382,7 @@ header#inicio div.header__bkgr div.header__img img:first-child {
 header#inicio div.header__bkgr div.header__img img:nth-child(2) {
   height: 30%;
   width: auto;
-  top: 48%;
+  top: 52%;
   left: 60%;
   opacity: 0;
   animation: apyDesLeft 6s;
@@ -400,15 +392,15 @@ header#inicio div.header__bkgr div.header__img img:nth-child(2) {
 /*bici*/
 header#inicio div.header__bkgr div.header__img img:nth-child(5) {
   height: 35%;
-  top: 55%;
+  top: 60%;
   left: 30%;
   width: auto;
   animation: aparecerLeft 4s;
 }
 header#inicio div.header__bkgr div.header__img img:nth-child(6) {
   height: 33%;
-  top: 68%;
-  left: 45%;
+  top: 74%;
+  left: 55%;
   width: auto;
   animation: aparecerRight 6s;
 }
@@ -417,13 +409,15 @@ header#inicio div.header__bkgr div.header__img img:nth-child(7) {
 }
 /*dron*/
 header#inicio div.header__bkgr div.header__img img:last-child {
-  height: 20px;
-  top: 35%;
+  height: 30px;
+  top: 37%;
   right: 100%;
+  opacity: 0;
   width: auto;
   animation: apyDesap 15s;
   animation-iteration-count: infinite;
   animation-delay: 5s;
+  animation-fill-mode: forwards;
 }
 
 .img-ej-mobile {
