@@ -419,7 +419,7 @@ header#inicio div.header__bkgr div.header__img img:nth-child(7) {
 /*dron*/
 header#inicio div.header__bkgr div.header__img img:last-child {
   height: 30px;
-  top: 37%;
+  top: 42%;
   right: 100%;
   opacity: 0;
   width: auto;
@@ -548,7 +548,7 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 }
 
 .owl-nav .owl-prev {
-  right: 20px;
+  left: 0px;
   background: url("../img/iconos/ico-prev.png") no-repeat;
 }
 @media (max-width: 767px) {
@@ -567,7 +567,7 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 }
 
 .owl-nav .owl-next {
-  right: -30px;
+  left: 50px;
   background: url("../img/iconos/ico-next.png") no-repeat;
 }
 @media (max-width: 767px) {
