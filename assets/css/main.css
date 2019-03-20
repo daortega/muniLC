@@ -554,6 +554,8 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 @media (max-width: 767px) {
   .owl-nav .owl-prev {
     top: 80%;
+    left: auto;
+    right: 20px;
     background: url("../img/iconos/ico-prev-blck.png") no-repeat;
     background-size: auto 100%;
   }
@@ -561,6 +563,8 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 @media (min-width: 767px) and (max-width: 1023px) {
   .owl-nav .owl-prev {
     top: 80%;
+    left: auto;
+    right: 20px;
     background: url("../img/iconos/ico-prev-blck.png") no-repeat;
     background-size: auto 100%;
   }
@@ -573,6 +577,8 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 @media (max-width: 767px) {
   .owl-nav .owl-next {
     top: 80%;
+    left: auto;
+    right: -10px;
     background: url("../img/iconos/ico-next-blck.png") no-repeat;
     background-size: auto 100%;
   }
@@ -580,6 +586,8 @@ header#inicio div.header__bkgr div.header__img img:last-child {
 @media (min-width: 767px) and (max-width: 1023px) {
   .owl-nav .owl-next {
     top: 80%;
+    left: auto;
+    right: -10px;
     background: url("../img/iconos/ico-next-blck.png") no-repeat;
     background-size: auto 100%;
   }
@@ -684,6 +692,7 @@ form div.form__datos {
   }
 }
 form input[type=text], form textarea {
+  font-family: 'Open Sans', sans-serif;
   border-radius: 4px;
   background-color: #eef2f6;
   flex: 1 1 50%;
