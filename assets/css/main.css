@@ -82,15 +82,15 @@
      opacity: 0;
      left: 5%;
   }
-  20%{
+  30%{
      opacity: 1;
-     left: 28%;
+     left: 38%;
   }
-  60%{
+  50%{
      opacity: 0;
      
    }
-   70%{
+   60%{
      left: 60%;
    }
   /*to{
